@@ -2,6 +2,8 @@ target/
 dbt_packages/
 logs/
 *.json
+!docs/catalog.json
+!docs/manifest.json
 .env
 venv/
 __pycache__/
