@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: ag1_raw
+    database: analytics-485222
+    schema: ag1_attribution
+    tables:
+      - name: raw_shopify_orders
+      - name: raw_meta_ads
+      - name: raw_klaviyo_campaigns
