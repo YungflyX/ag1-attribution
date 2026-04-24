@@ -168,6 +168,14 @@
     .footer-text a { color: #666; text-decoration: none; border-bottom: 1px solid #333; }
     .footer-text a:hover { color: #00ff88; border-color: #00ff88; }
 
+    .callout {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #00ff88;
+      text-align: center;
+      margin: 48px 0;
+    }
+
     @media (max-width: 600px) {
       body { padding: 40px 20px 80px; }
       .buttons { flex-direction: column; align-items: center; }
@@ -180,20 +188,33 @@
 
     <div class="label">AG1 Attribution Analysis</div>
     <h1>Your Marketing Dashboard Is Lying To You</h1>
-    <p class="subheadline">Meta claimed $246k in revenue. Klaviyo claimed $120k. Shopify recorded $221k. Someone is wrong — and it's not Shopify.</p>
-    <p class="intro">Right now, every DTC brand running Meta Ads and Klaviyo email is looking at numbers that don't add up — and most of them don't know it. They're making budget decisions, scaling campaigns, and cutting channels based on reported revenue that nobody has verified against the source of truth. This is what that actually looks like.</p>
+
+    <img src="AG1.png" alt="AG1 product" style="display:block;width:100%;max-width:800px;margin:0 auto 40px;" />
+
+    <p>Ever since the iOS 14 update in 2021, it seems like the ability to track the customer journey accurately has gotten harder than ever.</p>
+    <p>The numbers e-commerce brand owners are looking at every morning are structurally designed to look better than they actually are, causing them to make decisions they ultimately regret in the future.</p>
+    <p>Let's say Meta Ads report higher than normal revenue and an extremely healthy return on ad spend. Based off of that assumption, the business should expand and pour more resources into scaling. This might mean bidding on more ads, testing more creative variants, and increasing the ad budget, all in the hopes of increasing sales.</p>
+    <p>Yet, little did they know their business's true return on ad spend was barely breaking even, and the number one channel to fix it all had been neglected for years. This situation is the reality of many e-commerce brands in 2026. They are left guessing on what to do because they can't trust their data. Businesses don't need more data. They need more clarity. And this project aims to show how that might be solved in the real world.</p>
 
     <section>
-      <h2>The Attribution Problem Nobody Talks About</h2>
-      <p>Meta uses a 7-day click attribution window. Klaviyo uses a 5-day window. Here's what that means in practice.</p>
-      <p>A customer clicks a Meta ad on Monday. Opens a Klaviyo email on Wednesday. Buys on Thursday. Meta counts it. Klaviyo counts it. Shopify records one order. You now have two platforms claiming the same $112 sale — and your reported revenue is $224 before you've sold a thing.</p>
-      <p>Multiply that across thousands of orders and you get this:</p>
+      <h2>The problem nobody wants to explain to you.</h2>
+      <p>Every platform has its own unique way of tracking the sale of a customer.</p>
+      <p>Meta for example has a 7-day click attribution window and a 1-day view conversion, whereas Klaviyo has a 5-day window.</p>
+      <p>The reason this is a problem is simple.</p>
+      <p>If someone clicks an ad on Monday and buys on Thursday after opening a Klaviyo email, Meta counts that as a sale and so does Klaviyo. Two platforms are claiming credit for the same sale, despite the fact that money only changed hands once at the Shopify checkout.</p>
+      <p>When you add this up across thousands of orders over a month, this gap becomes impossible to ignore and silently kills whatever decision making power you once had.</p>
+    </section>
+
+    <section>
+      <h2>$145k in revenue that never existed.</h2>
+      <p>When comparing each channel's revenue to Shopify and reconciling how the inflated numbers should have been calculated, the results finally showed the real story.</p>
+
       <table>
         <thead>
           <tr>
             <th>Source</th>
             <th>Reported Revenue</th>
-            <th>Actual Shopify Revenue</th>
+            <th>Actual Revenue</th>
             <th>Overclaim</th>
           </tr>
         </thead>
@@ -212,27 +233,28 @@
           </tr>
         </tbody>
       </table>
-      <p>Your paid social looks like it's working. Your email looks like it's underperforming. Neither number is real.</p>
+
+      <div class="finding">
+        <div class="finding-label">Problem 01</div>
+        <p>Meta was overclaiming by 87.5% of what was actually true, while Klaviyo was doing it by 33%. The platforms were claiming $145k in revenue that Shopify never recorded. This inflation prevents businesses from making informed decisions and scaling in a way that is sustainable.</p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-label">Problem 02</div>
+        <p>The ROAS that looked so good on Monday morning was entirely wrong. Meta reported <span class="danger">1.86</span>, yet the true ROAS, calculated by taking the actual Shopify revenue and dividing it by actual Meta spend, was barely breaking even at <span class="highlight">0.99</span>.</p>
+      </div>
+
+      <div class="finding">
+        <div class="finding-label">Problem 03</div>
+        <p>The business spent $132k to make $131k back. This is before creative costs, agency fees, and any other overhead expenses a typical business has to deal with daily. Meaning they are actively losing money all while being blind to its effects until it is too late.</p>
+      </div>
     </section>
 
     <section>
-      <h2>What The Real Numbers Actually Say</h2>
-      <p>Strip out the attribution inflation and the story completely changes.</p>
-
-      <div class="finding">
-        <div class="finding-label">Finding 01 — Paid Social ROAS</div>
-        <p>The dashboard shows <span class="danger">1.86</span>. The true ROAS is <span class="highlight">0.99</span>. The brand thinks paid social is profitable. It's barely breaking even — and that's before creative costs, agency fees, or any overhead hit the P&L.</p>
-      </div>
-
-      <div class="finding">
-        <div class="finding-label">Finding 02 — Email Has Infinite ROAS</div>
-        <p>Email drove $90k in revenue with <span class="highlight">zero ad spend</span>. It's the highest-ROI channel in the business and almost certainly the most underinvested one. Every dollar shifted from Meta to email list growth compounds instead of evaporates.</p>
-      </div>
-
-      <div class="finding">
-        <div class="finding-label">Finding 03 — LTV Breaks By Channel</div>
-        <p>Paid social drives mostly one-time buyers. Email drives higher subscription rates and higher lifetime value. The channel that looks less profitable in the dashboard is building the customer base. The one that looks profitable is renting it.</p>
-      </div>
+      <h2>The channel nobody was watching.</h2>
+      <p>As bad as this looks, there is a silver lining.</p>
+      <p>Email drove $90k in revenue with zero ad spend. That is the most profitable channel in the entire business. And it had been overlooked the whole time.</p>
+      <p>The reason is simple. Email looks smaller in the dashboard because Klaviyo's attribution window is shorter, meaning there is no ad spend to inflate the numbers. Paid social looks bigger because Meta is claiming credit for everything within a 7-day window. So the budget follows the bigger number every single month. Businesses believe they are profitable, so they invest more in ad spend and less on email, making the same poor decision on wrong data.</p>
 
       <table>
         <thead>
@@ -241,7 +263,6 @@
             <th>Actual Revenue</th>
             <th>Ad Spend</th>
             <th>True ROAS</th>
-            <th>Reported ROAS</th>
           </tr>
         </thead>
         <tbody>
@@ -250,42 +271,47 @@
             <td>$131,351</td>
             <td>$132,665</td>
             <td class="danger">0.99</td>
-            <td>1.86</td>
           </tr>
           <tr>
             <td>Email</td>
             <td>$90,197</td>
             <td>$0</td>
             <td class="highlight">∞</td>
-            <td>n/a</td>
           </tr>
           <tr>
             <td>Organic Search</td>
             <td>$63,851</td>
             <td>$0</td>
             <td class="highlight">∞</td>
-            <td>n/a</td>
           </tr>
           <tr>
             <td>Direct</td>
             <td>$42,649</td>
             <td>$0</td>
             <td class="highlight">∞</td>
-            <td>n/a</td>
           </tr>
         </tbody>
       </table>
     </section>
 
     <section>
-      <h2>How I Built This</h2>
-      <p>The data is synthetic — built to match real Shopify, Meta Ads, and Klaviyo export formats exactly. Then I made it dirty on purpose.</p>
-      <ul>
-        <li>Generated realistic AG1-style ecommerce data with intentional quality issues baked in — 116 duplicate order IDs, null emails, future-dated transactions — the same problems you find in actual brand data exports before anyone has cleaned them</li>
-        <li>Built a three-layer dbt pipeline on BigQuery: staging models that clean each raw source, an intermediate model that deduplicates orders and standardizes channel labels, and mart models that produce the final attribution analysis with true vs. reported revenue side by side</li>
-        <li>Wrote dbt tests that flagged the 116 duplicate order IDs before they ever touched an aggregation — the exact mechanism that causes revenue overcounting in production pipelines when nobody is looking</li>
-      </ul>
+      <h2>What this actually means for a brand.</h2>
+      <p>The fix is not simple. But it is possible.</p>
+      <p>Shopify should be the only source of truth for revenue. Every reported number from every platform should be reconciled against what Shopify actually recorded before any budget decision gets made.</p>
+      <p>In practice that means pulling raw order data from Shopify, ad spend from Meta, and campaign data from Klaviyo into a single place where the numbers can be compared side by side. Not in a spreadsheet that someone updates on Monday morning. In a pipeline that runs automatically and flags the gap before it influences a decision.</p>
+      <p>That is what this project builds.</p>
     </section>
+
+    <section>
+      <h2>How this was built.</h2>
+      <p>The data in this project is synthetic, built to simulate the real conditions a DTC brand analyst would face. It does not reflect the full complexity of a real production environment, but it does reflect a real problem that e-commerce brands are dealing with today.</p>
+      <p>The dataset includes real data quality issues you would find in any brand export. 116 duplicate order IDs, null emails, future dated transactions. The same problems that exist inside every real brand export before anyone has touched it. Because you cannot learn how to handle messy data by only ever working with clean data.</p>
+      <p>From there I built a three layer dbt pipeline on BigQuery. Staging models cleaned each raw source. An intermediate model removed the duplicates and standardized the channel labels so everything spoke the same language. Mart models put the true numbers and the platform reported numbers side by side so the gap became impossible to ignore.</p>
+      <p>The dbt tests caught all 116 duplicate order IDs before they ever touched an aggregation. That matters because duplicate orders are one of the main mechanisms behind revenue overcounting in real production pipelines. Most brands have no tests running on their data, which means most brands have no idea when their numbers start lying.</p>
+      <p>This project shows what happens when someone actually checks.</p>
+    </section>
+
+    <p style="font-size:0.8rem;color:#555;text-align:center;margin-bottom:48px;">Data used in this analysis is synthetic and inspired by AG1's product catalog. All findings are for portfolio purposes only.</p>
 
     <div class="cta-section">
       <h2>Want to see the full pipeline?</h2>
