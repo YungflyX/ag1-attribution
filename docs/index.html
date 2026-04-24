@@ -225,7 +225,7 @@
     </div>
 
     <section>
-      <h2 style="font-size: 22px;">The problem nobody wants to explain to you.</h2>
+      <h2 style="font-family: Space Grotesk, sans-serif; font-size: 11px; font-weight: 600; color: #888888; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 80px; margin-bottom: 32px;">The problem nobody wants to explain to you.</h2>
       <p>Every platform has its own unique way of tracking the sale of a customer.</p>
       <p>Meta for example has a 7-day click attribution window and a 1-day view conversion, whereas Klaviyo has a 5-day window.</p>
       <p>The reason this is a problem is simple.</p>
@@ -279,7 +279,7 @@
     </section>
 
     <section>
-      <h2 style="font-size: 18px;">The channel nobody was watching.</h2>
+      <h2 style="font-family: Space Grotesk, sans-serif; font-size: 11px; font-weight: 600; color: #888888; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 80px; margin-bottom: 32px;">The channel nobody was watching.</h2>
       <p>As bad as this looks, there is a silver lining.</p>
       <p>Email drove $90k in revenue with zero ad spend. That is the most profitable channel in the entire business. And it had been overlooked the whole time.</p>
       <p>The reason is simple. Email looks smaller in the dashboard because Klaviyo's attribution window is shorter, meaning there is no ad spend to inflate the numbers. Paid social looks bigger because Meta is claiming credit for everything within a 7-day window. So the budget follows the bigger number every single month. Businesses believe they are profitable, so they invest more in ad spend and less on email, making the same poor decision on wrong data.</p>
@@ -323,7 +323,7 @@
     </section>
 
     <section>
-      <h2 style="font-size: 18px;">What this actually means for a brand.</h2>
+      <h2 style="font-family: Space Grotesk, sans-serif; font-size: 11px; font-weight: 600; color: #888888; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 80px; margin-bottom: 32px;">What this actually means for a brand.</h2>
       <p>The fix is not simple. But it is possible.</p>
       <p>Shopify should be the only source of truth for revenue. Every reported number from every platform should be reconciled against what Shopify actually recorded before any budget decision gets made.</p>
       <p>In practice that means pulling raw order data from Shopify, ad spend from Meta, and campaign data from Klaviyo into a single place where the numbers can be compared side by side. Not in a spreadsheet that someone updates on Monday morning. In a pipeline that runs automatically and flags the gap before it influences a decision.</p>
@@ -331,7 +331,7 @@
     </section>
 
     <section>
-      <h2 style="font-size: 22px;">How this was built.</h2>
+      <h2 style="font-family: Space Grotesk, sans-serif; font-size: 11px; font-weight: 600; color: #888888; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 80px; margin-bottom: 32px;">How this was built.</h2>
       <p>The data in this project is synthetic, built to simulate the real conditions a DTC brand analyst would face. It does not reflect the full complexity of a real production environment, but it does reflect a real problem that e-commerce brands are dealing with today.</p>
       <p>The dataset includes real data quality issues you would find in any brand export. 116 duplicate order IDs, null emails, future dated transactions. The same problems that exist inside every real brand export before anyone has touched it. Because you cannot learn how to handle messy data by only ever working with clean data.</p>
       <p>From there I built a three layer dbt pipeline on BigQuery. Staging models cleaned each raw source. An intermediate model removed the duplicates and standardized the channel labels so everything spoke the same language. Mart models put the true numbers and the platform reported numbers side by side so the gap became impossible to ignore.</p>
