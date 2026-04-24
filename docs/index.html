@@ -4,180 +4,204 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Marketing Dashboard Is Lying To You</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: #0f0f0f;
-      color: #e8e8e8;
+      background: #000000;
+      color: #F5F5F0;
       font-family: 'Inter', sans-serif;
       font-size: 17px;
-      line-height: 1.75;
-      padding: 60px 24px 120px;
+      line-height: 1.8;
+      padding: 80px 24px 120px;
+      position: relative;
     }
 
-    .container { max-width: 800px; margin: 0 auto; }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
 
     .label {
-      font-size: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: #00ff88;
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      line-height: 1.15;
-      color: #ffffff;
-      margin-bottom: 20px;
-    }
-
-    .subheadline {
-      font-size: 1.15rem;
-      color: #a0a0a0;
-      margin-bottom: 32px;
-      border-left: 3px solid #00ff88;
-      padding-left: 18px;
-    }
-
-    .intro {
-      font-size: 1.05rem;
-      color: #c8c8c8;
-      margin-bottom: 80px;
-    }
-
-    section { margin-bottom: 80px; }
-
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #00ff88;
+      color: #888888;
       margin-bottom: 24px;
     }
 
-    p { margin-bottom: 20px; color: #c8c8c8; }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.05em;
+      color: #F5F5F0;
+      margin-bottom: 40px;
+    }
+
+    .hero-img {
+      display: block;
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto 80px;
+      filter: grayscale(20%) contrast(1.1);
+    }
+
+    .intro p {
+      color: #F5F5F0;
+      margin-bottom: 20px;
+    }
+
+    section {
+      margin-top: 80px;
+      padding-top: 80px;
+      border-top: 1px solid #1A1A1A;
+    }
+
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #888888;
+      margin-bottom: 40px;
+    }
+
+    .stat-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 52px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: none;
+      color: #F5F5F0;
+      text-align: center;
+      line-height: 1.1;
+      margin-bottom: 48px;
+    }
+
+    .stat-section h2 .accent { color: #00E676; }
+
+    p { margin-bottom: 20px; color: #F5F5F0; }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 32px 0;
+      margin: 40px 0;
       font-size: 0.95rem;
     }
 
-    thead tr { border-bottom: 1px solid #333; }
+    thead tr { border-bottom: 1px solid #222222; }
 
     th {
       text-align: left;
       padding: 10px 14px;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #666;
+      color: #888888;
     }
 
     td {
-      padding: 12px 14px;
-      border-bottom: 1px solid #1e1e1e;
-      color: #d0d0d0;
+      padding: 14px 14px;
+      border-bottom: 1px solid #222222;
+      color: #F5F5F0;
     }
 
     tr:last-child td { border-bottom: none; }
 
-    .highlight { color: #00ff88; font-weight: 600; }
+    .highlight { color: #00E676; font-weight: 600; }
     .danger { color: #ff4d4d; font-weight: 600; }
 
     .finding {
-      border: 1px solid #1e1e1e;
-      border-left: 3px solid #00ff88;
-      padding: 20px 24px;
-      margin-bottom: 16px;
-      border-radius: 0 6px 6px 0;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid #1A1A1A;
     }
 
-    .finding-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #00ff88;
-      margin-bottom: 6px;
+    .finding-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: #00E676;
+      line-height: 1;
+      margin-bottom: 20px;
     }
 
-    .finding p { margin: 0; font-size: 1rem; }
-
-    ul { padding-left: 0; list-style: none; margin-bottom: 0; }
-
-    ul li {
-      padding: 14px 0 14px 24px;
-      border-bottom: 1px solid #1e1e1e;
-      color: #c8c8c8;
-      position: relative;
-    }
-
-    ul li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: #00ff88;
-    }
-
-    ul li:last-child { border-bottom: none; }
+    .finding p { margin: 0; }
 
     .cta-section {
       text-align: center;
-      padding: 60px 0 20px;
-      border-top: 1px solid #1e1e1e;
+      padding-top: 80px;
+      margin-top: 80px;
+      border-top: 1px solid #1A1A1A;
     }
 
     .cta-section h2 {
-      font-size: 1.75rem;
-      color: #ffffff;
-      margin-bottom: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: none;
+      color: #F5F5F0;
+      margin-bottom: 16px;
     }
 
-    .cta-section p { color: #666; margin-bottom: 36px; }
+    .cta-section > p { color: #888888; margin-bottom: 40px; }
 
     .buttons {
       display: flex;
       gap: 16px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 40px;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 28px;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      font-weight: 600;
+      padding: 16px 32px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       text-decoration: none;
+      border-radius: 0;
       transition: opacity 0.15s;
     }
 
-    .btn:hover { opacity: 0.85; }
-    .btn-primary { background: #00ff88; color: #0f0f0f; }
-    .btn-secondary { background: transparent; color: #e8e8e8; border: 1px solid #333; }
+    .btn:hover { opacity: 0.8; }
+    .btn-primary { background: #F5F5F0; color: #000000; border: 1px solid #F5F5F0; }
+    .btn-secondary { background: transparent; color: #F5F5F0; border: 1px solid #F5F5F0; }
 
-    .footer-text { font-size: 0.85rem; color: #444; }
-    .footer-text a { color: #666; text-decoration: none; border-bottom: 1px solid #333; }
-    .footer-text a:hover { color: #00ff88; border-color: #00ff88; }
-
-    .callout {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #00ff88;
+    .disclaimer {
+      font-size: 0.75rem;
+      color: #444444;
       text-align: center;
-      margin: 48px 0;
+      margin-top: 80px;
     }
 
     @media (max-width: 600px) {
-      body { padding: 40px 20px 80px; }
+      body { padding: 60px 20px 80px; }
+      h1 { font-size: 2rem; }
+      .stat-section h2 { font-size: 2.25rem; }
       .buttons { flex-direction: column; align-items: center; }
       .btn { width: 100%; max-width: 280px; text-align: center; }
     }
@@ -189,12 +213,14 @@
     <div class="label">AG1 Attribution Analysis</div>
     <h1>Your Marketing Dashboard Is Lying To You</h1>
 
-    <img src="AG1.png" alt="AG1 product" style="display:block;width:100%;max-width:800px;margin:0 auto 40px;" />
+    <img src="AG1.png" alt="AG1 product" class="hero-img" />
 
-    <p>Ever since the iOS 14 update in 2021, it seems like the ability to track the customer journey accurately has gotten harder than ever.</p>
-    <p>The numbers e-commerce brand owners are looking at every morning are structurally designed to look better than they actually are, causing them to make decisions they ultimately regret in the future.</p>
-    <p>Let's say Meta Ads report higher than normal revenue and an extremely healthy return on ad spend. Based off of that assumption, the business should expand and pour more resources into scaling. This might mean bidding on more ads, testing more creative variants, and increasing the ad budget, all in the hopes of increasing sales.</p>
-    <p>Yet, little did they know their business's true return on ad spend was barely breaking even, and the number one channel to fix it all had been neglected for years. This situation is the reality of many e-commerce brands in 2026. They are left guessing on what to do because they can't trust their data. Businesses don't need more data. They need more clarity. And this project aims to show how that might be solved in the real world.</p>
+    <div class="intro">
+      <p>Ever since the iOS 14 update in 2021, it seems like the ability to track the customer journey accurately has gotten harder than ever.</p>
+      <p>The numbers e-commerce brand owners are looking at every morning are structurally designed to look better than they actually are, causing them to make decisions they ultimately regret in the future.</p>
+      <p>Let's say Meta Ads report higher than normal revenue and an extremely healthy return on ad spend. Based off of that assumption, the business should expand and pour more resources into scaling. This might mean bidding on more ads, testing more creative variants, and increasing the ad budget, all in the hopes of increasing sales.</p>
+      <p>Yet, little did they know their business's true return on ad spend was barely breaking even, and the number one channel to fix it all had been neglected for years. This situation is the reality of many e-commerce brands in 2026. They are left guessing on what to do because they can't trust their data. Businesses don't need more data. They need more clarity. And this project aims to show how that might be solved in the real world.</p>
+    </div>
 
     <section>
       <h2>The problem nobody wants to explain to you.</h2>
@@ -205,8 +231,8 @@
       <p>When you add this up across thousands of orders over a month, this gap becomes impossible to ignore and silently kills whatever decision making power you once had.</p>
     </section>
 
-    <section>
-      <h2>$145k in revenue that never existed.</h2>
+    <section class="stat-section">
+      <h2><span class="accent">$</span>145k in revenue that never existed.</h2>
       <p>When comparing each channel's revenue to Shopify and reconciling how the inflated numbers should have been calculated, the results finally showed the real story.</p>
 
       <table>
@@ -235,17 +261,17 @@
       </table>
 
       <div class="finding">
-        <div class="finding-label">Problem 01</div>
+        <div class="finding-number">01</div>
         <p>Meta was overclaiming by 87.5% of what was actually true, while Klaviyo was doing it by 33%. The platforms were claiming $145k in revenue that Shopify never recorded. This inflation prevents businesses from making informed decisions and scaling in a way that is sustainable.</p>
       </div>
 
       <div class="finding">
-        <div class="finding-label">Problem 02</div>
+        <div class="finding-number">02</div>
         <p>The ROAS that looked so good on Monday morning was entirely wrong. Meta reported <span class="danger">1.86</span>, yet the true ROAS, calculated by taking the actual Shopify revenue and dividing it by actual Meta spend, was barely breaking even at <span class="highlight">0.99</span>.</p>
       </div>
 
       <div class="finding">
-        <div class="finding-label">Problem 03</div>
+        <div class="finding-number">03</div>
         <p>The business spent $132k to make $131k back. This is before creative costs, agency fees, and any other overhead expenses a typical business has to deal with daily. Meaning they are actively losing money all while being blind to its effects until it is too late.</p>
       </div>
     </section>
@@ -311,7 +337,7 @@
       <p>This project shows what happens when someone actually checks.</p>
     </section>
 
-    <p style="font-size:0.8rem;color:#555;text-align:center;margin-bottom:48px;">Data used in this analysis is synthetic and inspired by AG1's product catalog. All findings are for portfolio purposes only.</p>
+    <p class="disclaimer">Data used in this analysis is synthetic and inspired by AG1's product catalog. All findings are for portfolio purposes only.</p>
 
     <div class="cta-section">
       <h2>Want to see the full pipeline?</h2>
@@ -320,10 +346,6 @@
         <a href="./dbt-docs.html" class="btn btn-primary">View dbt Documentation</a>
         <a href="https://github.com/YungflyX/ag1-attribution" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
       </div>
-      <p class="footer-text">
-        Built by Josh Stewart &nbsp;·&nbsp; Business Analytics, University of Manitoba 2026 &nbsp;·&nbsp;
-        <a href="https://josh-stewart.vercel.app" target="_blank" rel="noopener">josh-stewart.vercel.app</a>
-      </p>
     </div>
 
   </div>
