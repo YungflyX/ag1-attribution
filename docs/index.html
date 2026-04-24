@@ -47,7 +47,7 @@
 
     h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 48px;
+      font-size: 52px;
       font-weight: 700;
       line-height: 1.1;
       letter-spacing: 0.05em;
@@ -70,21 +70,22 @@
 
     section {
       margin-top: 80px;
-      padding-top: 80px;
+      padding-top: 0;
       border-top: 1px solid #1A1A1A;
     }
 
     h2 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #888888;
-      margin-bottom: 40px;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: none;
+      color: #F5F5F0;
+      margin-top: 60px;
+      margin-bottom: 24px;
     }
 
-    .stat-section h2 {
+    .stat-headline {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 52px;
       font-weight: 700;
@@ -96,7 +97,7 @@
       margin-bottom: 48px;
     }
 
-    .stat-section h2 .accent { color: #00E676; }
+    .stat-headline .accent { color: #00E676; }
 
     p { margin-bottom: 20px; color: #F5F5F0; }
 
@@ -162,6 +163,7 @@
       letter-spacing: 0.05em;
       text-transform: none;
       color: #F5F5F0;
+      margin-top: 0;
       margin-bottom: 16px;
     }
 
@@ -200,8 +202,8 @@
 
     @media (max-width: 600px) {
       body { padding: 60px 20px 80px; }
-      h1 { font-size: 2rem; }
-      .stat-section h2 { font-size: 2.25rem; }
+      h1 { font-size: 36px; }
+      .stat-headline { font-size: 2.25rem; }
       .buttons { flex-direction: column; align-items: center; }
       .btn { width: 100%; max-width: 280px; text-align: center; }
     }
@@ -232,7 +234,8 @@
     </section>
 
     <section class="stat-section">
-      <h2><span class="accent">$</span>145k in revenue that never existed.</h2>
+      <h2>The real numbers</h2>
+      <p class="stat-headline"><span class="accent">$</span>145k in revenue that never existed.</p>
       <p>When comparing each channel's revenue to Shopify and reconciling how the inflated numbers should have been calculated, the results finally showed the real story.</p>
 
       <table>
